@@ -1,0 +1,89 @@
+<div class="container">
+  <div
+    class="form-box mx-auto mt-5 p-5"
+    style="width: 50%; box-shadow: 8px 6px 16px 0px rgba(130, 130, 130, 0.75)"
+  >
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Password Generator</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="length">Enter Password Length</label>
+        <input
+          id="length"
+          type="text"
+          (input)="onInput($event.target.value)"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group form-check">
+          <input
+            id="check1"
+            type="checkbox"
+            (change)="onCheck1()"
+            class="form-check-input"
+          />
+          <label class="form-check-label" for="check1">Use Letters </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group form-check">
+          <input
+            id="check2"
+            type="checkbox"
+            (change)="onCheck2()"
+            class="form-check-input"
+          />
+          <label class="form-check-label" for="check2">Use Numbers </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group form-check">
+          <input
+            id="check3"
+            type="checkbox"
+            (change)="onCheck3()"
+            class="form-check-input"
+          />
+          <label class="form-check-label" for="check3">Use Symbols </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-12">
+        <button
+          class="btn btn-primary form-control"
+          [disabled]="!(length && (check1 || check2 || check3))"
+          (click)="onClick()"
+        >
+          Generate
+        </button>
+      </div>
+    </div>
+    <div class="row" *ngIf="password">
+      <div class="form-group col-md-12">
+        <label for="translated">Your generated Password Ready to copy</label>
+        <input
+          id="translated"
+          type="text"
+          [(value)]="password"
+          class="form-control"
+        />
+      </div>
+    </div>
+  </div>
+</div>

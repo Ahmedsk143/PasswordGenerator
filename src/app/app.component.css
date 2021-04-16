@@ -1,0 +1,12 @@
+input[type=checkbox]{
+    cursor: pointer;
+}
+.form-box{
+    background-color:#7879e2;
+    color: #fff;
+    border-radius: 0.8rem;
+}
+.btn.btn-primary{
+    background-color: #080a1f;
+    border: none;
+}
