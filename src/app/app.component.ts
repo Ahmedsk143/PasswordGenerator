@@ -12,12 +12,14 @@ export class AppComponent {
   check2 = false;
   check3 = false;
 
-  onInput(input: string) {
+  onInput(input: string, e: InputEvent) {
+    console.log(e.data);
+    console.log(e.target);
+    // console.log(input);
     const parsInput = parseInt(input);
     if (!isNaN(parsInput)) {
       this.length = parsInput;
     }
-    console.log(input);
   }
   onCheck1() {
     this.check1 = !this.check1;
